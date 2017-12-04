@@ -1,0 +1,12 @@
+targets:
+  main:
+    resources:
+      RawSerialPort:
+        port: "/dev/ttyUSB0"
+    drivers:
+      ManualPowerDriver:
+        name: "example"
+      ShellDriver:
+        prompt: 'nanomind # '
+        login_prompt: ' login: '
+        username: 'root'
