@@ -1,5 +1,5 @@
 
 def test_gosh(command):
-    print("It works!!!!")
+    print(command.run('cmp ident'))
 
 
