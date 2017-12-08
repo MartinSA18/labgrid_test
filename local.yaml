@@ -1,12 +1,15 @@
+imports:
+  - /home/martinsa/labgrid/labgrid/driver/goshdriver.py
 targets:
   main:
     resources:
-      RawSerialPort:
-        port: "/dev/ttyUSB0"
+      USBSerialPort:
+        match:
+          'ID_SERIAL_SHORT': 'FT0H9ZO2'
+        speed: 500000
     drivers:
       ManualPowerDriver:
         name: "example"
-      ShellDriver:
-        prompt: 'nanomind # '
-        login_prompt: ' login: '
-        username: 'root'
+      SerialDriver:
+        txdelay: 0.005
+      #GoshDriver: {}
